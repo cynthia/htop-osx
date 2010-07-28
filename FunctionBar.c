@@ -36,7 +36,12 @@ char* FUNCTIONBAR_CLASS = "FunctionBar";
 #define FUNCTIONBAR_CLASS NULL
 #endif
 
+#ifdef __APPLE__
+// Provide Exposé-friendly alternative keys since the OSX takes the F9/F10/F11 keys
+static char* FunctionBar_FKeys[] = {"F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9/k", "F10/q", NULL};
+#else
 static char* FunctionBar_FKeys[] = {"F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", NULL};
+#endif
 
 static char* FunctionBar_FLabels[] = {"      ", "      ", "      ", "      ", "      ", "      ", "      ", "      ", "      ", "      ", NULL};
 
